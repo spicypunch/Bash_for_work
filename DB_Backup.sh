@@ -1,13 +1,13 @@
 #!/bin/bash
 ## crontab을 이용하여 원하는 날짜 및 시간에 DB 백업 자동화
 
-backup_dir=/var/backup/
+backup_dir=/var/backup/ # DB를 저장할 경로
 
-backup_cnt=7
+backup_cnt=7 # 백업 디렉토리에 유지할 디렉토리 개수
 
 db_root_pw='passwd' # Dump할 DB 비밀번호
 
-today="`date '+%Y%m%d'`"
+today="`date '+%Y%m%d'`" # 현재 날짜
 
 DBServer="127.0.0.1" # Dump할 DB 서버 주소 
 
