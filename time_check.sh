@@ -6,7 +6,7 @@ do
   #명령어 수행 시간 테스트
   StartTime=$(date +%s)
   
-  echo "$n 번 반복"
+  echo "$n 번째 실행"
   
   #사용할 명령어 기입
   nslookup example.com
@@ -14,11 +14,11 @@ do
   EndTime=$(date +%s)
   
   #명령어 수행 시간 결과 출력
-  echo "명령어를 실행하는데 총 $(($EndTime - $StartTime))초 걸렸습니다."
+  echo -e "명령어를 실행하는데 총 $(($EndTime - $StartTime))초 걸렸습니다.\n"
   
   #특정 시간이 지날 때만 확인하고 싶을 때 조건문
   if [ $(($EndTime - $StartTime)) -ge 5 ]; then
-    echo "명령어를 실행하는데 총 $(($EndTime - $StartTime))초 걸렸습니다."
+    echo -e 령어를 실행하는데 총 $(($EndTime - $StartTime))초 걸렸습니다.\n"
   fi
   
   ((n++))
