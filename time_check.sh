@@ -8,7 +8,7 @@ do
   echo "$n 번 반복"
   
   #사용할 명령어 기입
-  nslookup h00027.vegas-solution.com
+  nslookup example.com
   EndTime=$(date +%s)
   
   #명령어 수행 시간 결과 출력
