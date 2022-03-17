@@ -3,10 +3,10 @@
 n=0
 while [ $n -le 100 ]
 do
+  echo "$n 번째 실행"
+  
   #명령어 수행 시간 테스트
   StartTime=$(date +%s)
-  
-  echo "$n 번째 실행"
   
   #사용할 명령어 기입
   nslookup example.com
