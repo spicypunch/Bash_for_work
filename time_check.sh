@@ -15,6 +15,6 @@ do
   echo "It takes $(($EndTime - $StartTime)) seconds to complete this task."
   
   ((n++))
-  #1초 지나고 다시 반복
+  #0.5초 지나고 다시 반복
   sleep 0.5s
 done
