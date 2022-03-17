@@ -6,6 +6,8 @@ do
   #명령어 수행 시간 테스트
   StartTime=$(date +%s)
   echo "$n 번 반복"
+  
+  #사용할 명령어 기입
   nslookup h00027.vegas-solution.com
   EndTime=$(date +%s)
   
