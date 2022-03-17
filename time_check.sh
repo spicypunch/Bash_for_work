@@ -18,7 +18,7 @@ do
   
   #특정 시간이 지날 때만 확인하고 싶을 때 조건문
   if [ $(($EndTime - $StartTime)) -ge 5 ]; then
-    echo -e 명령어를 실행하는데 총 $(($EndTime - $StartTime))초 걸렸습니다.\n"
+    echo -e "명령어를 실행하는데 총 $(($EndTime - $StartTime))초 걸렸습니다.\n"
   fi
   
   ((n++))
