@@ -35,12 +35,12 @@ if [[ $new_dir == "" ]]; then
 fi
 
 #db 목록 list
-db_list=`echo "show databases;" | mysql -uvegas -p"$db_root_pw" -h $DBServer`
+db_list=`echo "show databases;" | mysql -uroot -p"$db_root_pw" -h $DBServer`
 
 #조건문에 맞는 DB 만 백업
 for db in $db_list ; do
   # create backup dir db
   if [[ "$db" == "t00054" ]] || [[ ${db:0:2} == "h0" ]]; then
-    mysqldump -uvegas -p"$db_root_pw" -h $DBServer $db > $backup_dir/db.$today/$db.sql
+    mysqldump -uroot -p"$db_root_pw" -h $DBServer $db > $backup_dir/db.$today/$db.sql
   fi
 done
