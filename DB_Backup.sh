@@ -35,7 +35,7 @@ if [[ $new_dir == "" ]]; then
 fi
 
 #db 목록 list
-db_list=`echo "show databases;" | mysql -N -uvegas -p"$db_root_pw" -h $DBServer`
+db_list=`echo "show databases;" | mysql -uvegas -p"$db_root_pw" -h $DBServer`
 
 #조건문에 맞는 DB 만 백업
 for db in $db_list ; do
