@@ -17,7 +17,8 @@ elif [[  ${server_name:0:2} == "hc" ]]; then
 fi
 
 #DB 덮어쓰기를 예방하기 위해 본인이 만들 DB가 존재하는지 확인
-sshpass -f passwd.txt ssh -p6722 root@int.domain.com "mysql -uroot -p passwd -e 'use $db_name;'"
+echo "DB 존재 여부 확인"
+sshpass -f passwd.txt ssh -p6722 root@domain.com "mysql -uroot -p passwd -e 'show databases like '\''$db_name'\'';'"
 
 echo -n "컨버팅을 진행하시겠습니까? 1:예, 2:아니요 : "
 read num
