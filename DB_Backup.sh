@@ -7,7 +7,7 @@ backup_cnt=7 # 백업 디렉토리에 유지할 디렉토리 개수
 
 db_root_pw='passwd' # Dump할 DB 비밀번호
 
-today="`date '+%Y%m%d'`" # 현재 날짜
+today=`date '+%Y%m%d'` # 현재 날짜
 
 DBServer="127.0.0.1" # Dump할 DB 서버 주소 
 
