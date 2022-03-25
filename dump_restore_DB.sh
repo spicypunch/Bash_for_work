@@ -25,3 +25,4 @@ read num
 if [[ num -eq 1 ]]; then
   sshpass -f passwd.txt ssh -p6722 root@int.domain.com "mysql -uroot -p passwd -e 'create database $db_name;'"
   sshpass -f passwd.txt ssh -p6722 root@int.domain.com "mysql -uroot -p passwd $db_name < $db_name.sql"
+fi
