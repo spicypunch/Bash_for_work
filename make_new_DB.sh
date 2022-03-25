@@ -21,8 +21,15 @@ sshpass -f passwd.txt ssh -pnumber ID@Domain "mysqldump -uroot -ppasswd db > db.
 #새로 DB를 생성할 서버에 db.sql을 옮김
 sshpass -f passwd.txt ssh ID2@$server_name "sshpass -p passwd scp -Pnumber ID@Domain:/home/t00000.sql /home/ID2/"
 
-#입력받은 값을 이름으로 DB 생성
-sshpass -f passwd.txt ssh ID2@$server_name "mysql -uroot -ppasswd -e 'create database $db_name'"
+#DB를 생성하기 전 해당 이름을 가진 DB가 있는지 확인함
+sshpass -f passwd.txt ssh ID2@$server_name. "mysql -uroot -p passwd -e 'show databases like '\''$db_name'\'';'"
 
-#옮겨놓은 공DB Restore
-sshpass -f passwd.txt ssh ID2@$server_name "mysql -uroot -ppasswd $db_name < db.sql"
+echo -n "계속 진행하시겠습니까? 1.yes, 2.no : "
+read num
+if [ $num -eq 1 ];
+  #입력받은 값을 이름으로 DB 생성
+  sshpass -f passwd.txt ssh ID2@$server_name "mysql -uroot -p passwd -e 'create database $db_name'"
+
+  #옮겨놓은 공DB Restore
+  sshpass -f passwd.txt ssh ID2@$server_name "mysql -uroot -p passwd $db_name < db.sql"
+fi
