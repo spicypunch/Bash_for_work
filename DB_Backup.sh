@@ -12,7 +12,7 @@ today=`date '+%Y%m%d'` # 현재 날짜
 DBServer="127.0.0.1" # Dump할 DB 서버 주소 
 
 #오래된 디렉토리 삭제(디렉토리 이름 기준)
-old_backup_dir="`ls -r $backup_dir|grep db 2>/dev/null`"
+old_backup_dir=`ls -r $backup_dir|grep db 2>/dev/null`
 i=0
 for dir in $old_backup_dir ; do
 echo $dir
@@ -29,7 +29,7 @@ done
 find $backup_dir -mtime +7 -name "db.*" -exec rm -rf {} \;
 
 #오늘 날짜의 디렉토리가 없을 시 디렉토리 생성
-new_dir="`ls db.$today 2>/dev/null`"
+new_dir=`ls db.$today 2>/dev/null`
 if [[ $new_dir == "" ]]; then
   mkdir -p $backup_dir/db.$today/
 fi
