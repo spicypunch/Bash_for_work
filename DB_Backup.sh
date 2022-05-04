@@ -1,5 +1,5 @@
 #!/bin/bash
-## crontab을 이용하여 원하는 날짜 및 시간에 DB 백업 자동화
+# crontab을 이용하여 원하는 날짜 및 시간에 DB 백업 자동화
 
 backup_dir=/var/backup/ # DB를 저장할 경로
 
